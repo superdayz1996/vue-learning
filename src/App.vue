@@ -79,26 +79,41 @@ onMounted(() => {
   //取得物件中的陣列數值
   //其中輸出 aboutMe 物件中 hobbies 陣列的索引 2（第三個）元素。
 
-  let obj = {};
-  obj.a = 1;
-  obj["b"] = 2;
+   /*---------------------- let -------------------------*/
+  
+   //建立obj物件並新增屬性
 
-  console.log("obj", obj);
+  let obj = {};    //建立一個空物件 obj
+  obj.a = 1;      //方法1：這是使用點記法增加屬性
+  obj["b"] = 2;   //方法2:新增屬性 'b'，並賦值為 ,這是使用中括號方法
 
-  const x = {
+
+  console.log("obj", obj);   //輸出 obj 物件的內容
+
+  const x = {     //宣告一個不能修改的物件 x，初始值為 { a: 1, b: 2 }
     a: 1,
     b: 2,
   };
 
-  x.a = 3;
+  x.a = 3;  //修改了 x 物件內部的 a 屬性，將其值從 1 變成 3
+  console.log("obj",x);
+  //const 只保證變數 x 本身不能被重新賦值（例如 x = {} 會報錯）
+ //但 x 內部的屬性仍然可以被修改，例如 x.a = 3; 是可以成立
+ 
+
 
   /*---------------------- DOM -------------------------*/
-  const li_first_content = li_first.textContent;
-  console.log("li_first_content", li_first_content);
-  li_first.textContent = "aaaaa";
+  const li_first_content = li_first.textContent;        //li_first.textContent 會取得 li_first 這個 HTML 元素的文字內容
+  console.log("li_first_content", li_first_content);   //顯示 li_first_content 變數的值，讓我們檢查 li_first 原本的文字內容
+  li_first.textContent = "aaaaa";                     //將 li_first 的內容更改為 "aaaaa" 
+  //textContent 用來讀取或修改 HTML中的元素與純文字內容
 
   // querySelector 只取得第一個
-  console.log("querySelector", document.querySelector("li.yyy"));
+  console.log("querySelector", document.querySelector("li.yyy"));  
+   //選取所有 <li>，且 id="first_li" 的元素
+  //列出 NodeList（找到的 <li> 元素集合） 
+
+
 
   // 只要符合條件 dom 都回傳
   console.log("querySelectorAll", document.querySelectorAll("li#first_li"));
