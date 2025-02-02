@@ -10,19 +10,15 @@ onMounted(() => {
 
   btn.addEventListener("click", function (event) {
     event.stopPropagation();
-    e.stopPropagation();
+    event.stopPropagation();
     window.alert("btn 按了");
-    true
+    true;
   });
 
-  inner.addEventListener(
-    "click",
-    function (e) {
-      e.stopPropagation();
-      window.alert("inner 按了");
-    },
-    
-  );
+  inner.addEventListener("click", function (e) {
+    e.stopPropagation();
+    window.alert("inner 按了");
+  });
 
   outter.addEventListener(
     "click",
@@ -30,7 +26,7 @@ onMounted(() => {
       event.preventDefault();
       event.stopPropagation(); // 不要往上觸發
       window.alert("outter 按了");
-    },
+    }
     // false, 不要往下觸發; 要跟 event.stopPropagation() 一起寫
   );
 });

@@ -25,3 +25,13 @@ function toNextPage() {
   </div>
   <RouterView></RouterView>
 </template>
+
+<style>
+body {
+  padding: 0;
+}
+
+#app {
+  overflow: hidden;
+}
+</style>

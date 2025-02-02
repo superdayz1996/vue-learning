@@ -15,9 +15,14 @@ const router = createRouter({
       component: () => import("../views/AboutView.vue"),
     },
     {
-      path: "/test",
-      name: "test",
-      component: () => import("../views/TestView.vue"),
+      path: "/flex",
+      name: "flex",
+      component: () => import("../views/FlexView.vue"),
+    },
+    {
+      path: "/obj",
+      name: "obj",
+      component: () => import("../views/ObjectView.vue"),
     },
   ],
 });
