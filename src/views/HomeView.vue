@@ -122,19 +122,20 @@ onMounted(() => {
 
   const ulOne = document.getElementById("ul_1");
   // 取得第一個 li
-  console.log(ulOne.firstChild);
+  console.log(ulOne.firstChild); //會回傳文字節點或者元素視HTML而定
   // 取得最後一個 li
-  console.log(ulOne.lastChild);
-
+  console.log(ulOne.lastChild);   //取得內部最後一個子節點若有換行輸出則會輸出文字節點（\n)
   const li_3 = document.getElementById("li_x3");
   // 找上一層
-  console.log(li_3.parentNode);
-  console.log(li_3.previousSibling);
-  console.log(li_3.nextSibling);
+  console.log(li_3.parentNode);    // 取得上一層父子節點（會包含元素節點、文字節點、註解節點）
+  console.log(li_3.previousSibling);  //會取得 li_3 前一個「兄弟節點（Sibling Node）」，也就是和 li_3 屬於同一層級的上一個節點
+  
+  //找下一層
+  console.log(li_3.nextSibling);  //會取得 li_3 元素的「下一個兄弟節點（Sibling Node）」並輸出
 
   // nodeValue
-  console.log(ulOne.nodeValue); // null
-  console.log(document.querySelector("#li_x3 span").firstChild.nodeValue);
+  console.log(ulOne.nodeValue); // null    //主要用於文字節點（Text Node）或屬性節點（Attribute Node），但不適用元素節點
+  console.log(document.querySelector("#li_x3 span").firstChild.nodeValue);  //x3
   console.log(document.querySelector("#li_x3 span").childNodes[0].nodeValue);
 
   // attribute
